@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/js/app.js"
+    "start": "lite-server"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "jquery": "^3.3.1",
     "jsdom": "^12.2.0",
     "openzeppelin-solidity": "^2.0.0",
+    "lite-server": "^2.3.0",
     "zeppelin-solidity": "^1.12.0"
   }
 }
