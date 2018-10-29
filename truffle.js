@@ -2,7 +2,7 @@
 require('babel-register')
 var HDWalletProvider = require("truffle-hdwallet-provider");
 //var rpc_endpoint_kovan = "https://kovan.infura.io/v3/a0f96fa594774bad996d670e1ec06cb3";
-var rpc_endpoint_poa = "http://nodeone.centralus.cloudapp.azure.com:8503";
+var rpc_endpoint_poa = "http://paritypoa.eastasia.cloudapp.azure.com:8501";
 var mnemonic = "taste public forest put voyage rabbit trial toward actress sudden letter attract";
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -14,10 +14,10 @@ module.exports = {
       network_id: "*" // Match any network id
     },
     poa: {
-      //provider: new HDWalletProvider(mnemonic, rpc_endpoint_poa),
-      host:"168.63.153.52",
+      provider: new HDWalletProvider(mnemonic, rpc_endpoint_poa),
+      //host:"168.63.153.52",
       gasPrice: '0x00',
-      port: 30310,
+      //port: 30310,
       network_id: "1515"//1515
     }
   }
