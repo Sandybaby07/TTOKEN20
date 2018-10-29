@@ -14,10 +14,11 @@ module.exports = {
       network_id: "*" // Match any network id
     },
     poa: {
-      provider: new HDWalletProvider(mnemonic, rpc_endpoint_poa),
-      //host:"168.63.153.52",
+      //provider: new HDWalletProvider(mnemonic, rpc_endpoint_poa),
+      host:"paritypoa.eastasia.cloudapp.azure.com",
       gasPrice: '0x00',
-      //port: 30310,
-      network_id: "1515"//1515
+      port: 8501,
+      network_id: "*"//1515
     }
   }
+}
