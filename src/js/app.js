@@ -5,7 +5,8 @@ const { document } = (new JSDOM('')).window;
 global.document = document;
 var $ = jQuery = require('jquery')(window);
 
-App = {
+
+window.App = {
   web3Provider: null,
   contracts: {},
 
@@ -20,7 +21,7 @@ App = {
       web3 = new Web3(web3.currentProvider);
     } else {
       // set the provider you want from Web3.providers
-      App.web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:9545');
+      App.web3Provider = new Web3.providers.HttpProvider('http://eth7l2f7b-dns-reg1.eastasia.cloudapp.azure.com:8540');
       web3 = new Web3(App.web3Provider);
     }
 
@@ -105,8 +106,15 @@ App = {
 
 };
 
-$(function () {
-  $(window).on('load', function () {
-    App.init();
-  });
+window.addEventListener('load', function() {
+  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+  if (typeof web3 !== 'undefined') {
+    console.warn("Using web3 detected from external source.");
+    // Use Mist/MetaMask's provider
+    window.web3 = new Web3(web3.currentProvider);
+  } else {
+    console.warn("No web3 detected. Please use MetaMask or Mist browser.");
+  }
+
+  App.init();
 });
