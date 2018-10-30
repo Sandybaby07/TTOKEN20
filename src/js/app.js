@@ -5,7 +5,6 @@ const { document } = (new JSDOM('')).window;
 global.document = document;
 var $ = jQuery = require('jquery')(window); */
 
-
 window.App = {
   web3Provider: null,
   contracts: {},
@@ -29,7 +28,7 @@ window.App = {
   },
 
   initContract: function () {
-    $.getJSON('../../build/contracts/TutorialToken.json', function (data) {
+    $.getJSON('TutorialToken.json', function (data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var TutorialTokenArtifact = data;
       App.contracts.TutorialToken = TruffleContract(TutorialTokenArtifact);
@@ -106,7 +105,7 @@ window.App = {
 
 };
 
-window.addEventListener('load', function () {
+$(window).on('load', function () {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
     console.warn("Using web3 detected from external source.");
