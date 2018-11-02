@@ -5,7 +5,7 @@ var HDWalletProvider = require("truffle-hdwallet-provider");
 var rpc_endpoint_poa = "http://eth7l2f7b-dns-reg1.eastasia.cloudapp.azure.com:8540";
 var mnemonic = "taste public forest put voyage rabbit trial toward actress sudden letter attract";
 module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
+  // See <http://truffleframework.com/docs/advanced/configuration>8
   // for more about customizing your Truffle configuration!
   networks: {
     development: {

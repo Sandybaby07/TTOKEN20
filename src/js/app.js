@@ -62,7 +62,7 @@ window.App = {
         console.log(error);
       }
 
-      var account = accounts[0];
+      var account = accounts[1];
 
       App.contracts.TutorialToken.deployed().then(function (instance) {
         tutorialTokenInstance = instance;
@@ -87,14 +87,14 @@ window.App = {
         console.log(error);
       }
 
-      var account = accounts[0];
+      var account = accounts[1];
       console.log("coinbase : " + account);
       App.contracts.TutorialToken.deployed().then(function (instance) {
         tutorialTokenInstance = instance;
 
         return tutorialTokenInstance.balanceOf(account);
       }).then(function (result) {
-        balance = result.c[0];
+        balance = result.c[1];
 
         $('#TTBalance').text(balance);
       }).catch(function (err) {
